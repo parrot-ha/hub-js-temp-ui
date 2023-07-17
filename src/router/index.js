@@ -105,22 +105,22 @@ const router = createRouter({
       component: () => import("../views/settings/LoggerConfig.vue"),
     },
     {
-      path: "/aa-code",
+      path: "/sa-code",
       name: "SmartAppCodeList",
       component: () => import("../views/app/SmartAppCodeList.vue"),
     },
     {
-      path: "/aa-code/add",
+      path: "/sa-code/add",
       name: "SmartAppCodeAdd",
       component: () => import("../views/app/SmartAppCodeAdd.vue"),
     },
     {
-      path: "/aa-code/:id/edit",
+      path: "/sa-code/:id/edit",
       name: "SmartAppCodeEdit",
       component: () => import("../views/app/SmartAppCodeEdit.vue"),
     },
     {
-      path: "/aa-code/:id/settings",
+      path: "/sa-code/:id/settings",
       name: "SmartAppSettings",
       component: () => import("../views/app/SmartAppSettings.vue"),
     },

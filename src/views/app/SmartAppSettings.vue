@@ -73,14 +73,14 @@ export default {
   name: "SmartAppSettings",
   data() {
     return {
-      aaId: "",
+      saId: "",
       smartApp: { oAuthEnabled: false },
     };
   },
   methods: {
     updateSmartApp: function () {
       var body = this.smartApp;
-      fetch(`/api/smart-apps/${this.aaId}`, {
+      fetch(`/api/smart-apps/${this.saId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
@@ -97,9 +97,9 @@ export default {
   },
 
   mounted: function () {
-    this.aaId = this.$route.params.id;
+    this.saId = this.$route.params.id;
 
-    fetch(`/api/smart-apps/${this.aaId}`)
+    fetch(`/api/smart-apps/${this.saId}`)
       .then((response) => response.json())
       .then((data) => {
         if (typeof data !== "undefined" && data != null) {

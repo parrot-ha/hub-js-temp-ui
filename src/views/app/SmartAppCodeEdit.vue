@@ -32,7 +32,7 @@
             outlined
             :to="{
               name: 'SmartAppSettings',
-              params: { id: aaId },
+              params: { id: saId },
             }"
             mx-2
           >
@@ -72,7 +72,7 @@ export default {
     return {
       updatePending: false,
       alertMessage: null,
-      aaId: "0",
+      saId: "0",
       smartApp: { sourceCode: "" },
       editorHeight: "500px",
     };
@@ -88,7 +88,7 @@ export default {
       this.alertMessage = null;
       this.smartApp.sourceCode = updatedCode;
 
-      fetch(`/api/smart-apps/${this.aaId}/source`, {
+      fetch(`/api/smart-apps/${this.saId}/source`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(this.smartApp),
@@ -112,7 +112,7 @@ export default {
       this.updatePending = true;
       this.alertMessage = null;
 
-      fetch(`/api/smart-apps/${this.aaId}`, {
+      fetch(`/api/smart-apps/${this.saId}`, {
         method: "DELETE",
       })
         .then(handleErrors)
@@ -124,7 +124,7 @@ export default {
           if (!data.success) {
             this.alertMessage = data.message;
           } else {
-            this.$router.push("/aa-code");
+            this.$router.push("/sa-code");
           }
         })
         .catch((error) => {
@@ -155,9 +155,9 @@ export default {
   mounted: function () {
     this.resizeEditor();
 
-    this.aaId = this.$route.params.id;
+    this.saId = this.$route.params.id;
 
-    fetch(`/api/smart-apps/${this.aaId}/source`)
+    fetch(`/api/smart-apps/${this.saId}/source`)
       .then((response) => response.json())
       .then((data) => {
         if (typeof data !== "undefined" && data != null) {

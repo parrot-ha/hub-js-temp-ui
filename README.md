@@ -1,6 +1,14 @@
 # hub-js-temp-ui
 temporary ui for the hub-js project
 
+This is mean to connect to a running hub-js, which will be serving up api endpoints on port 6501.
+
+To get started run:
+```npm install```
+```npm run dev```
+
+The ui will be available on port 5173
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup

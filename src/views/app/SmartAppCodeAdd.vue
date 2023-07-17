@@ -8,7 +8,7 @@
           role="alert"
           v-if="alertMessage"
         >
-          {{ alertMessage }}
+          <pre>{{ alertMessage }}</pre>
           <button
             type="button"
             class="btn-close"
@@ -80,7 +80,7 @@ export default {
           if (!data.success) {
             this.alertMessage = data.message;
           } else {
-            this.$router.push(`/aa-code/${data.aaId}/edit`);
+            this.$router.push(`/sa-code/${data.saId}/edit`);
           }
         })
         .catch((error) => {

@@ -30,7 +30,7 @@
 <script>
 import ace from "ace-builds";
 import "ace-builds/src-min-noconflict/theme-monokai";
-import "ace-builds/src-min-noconflict/mode-groovy";
+import "ace-builds/src-min-noconflict/mode-javascript";
 import "ace-builds/src-min-noconflict/ext-searchbox";
 
 export default {
@@ -74,7 +74,7 @@ export default {
       showPrintMargin: false,
     });
     this.editor.renderer.setScrollMargin(0, 5, 0, 5);
-    this.editor.session.setMode("ace/mode/groovy");
+    this.editor.session.setMode("ace/mode/javascript");
     this.editor.setTheme("ace/theme/monokai");
     this.editor.commands.addCommand({
       name: "save",

@@ -46,7 +46,7 @@ export default {
         { title: "Settings", href: "/settings", icon: "bi bi-sliders" },
         {
           title: "SmartApp Code",
-          href: "/aa-code",
+          href: "/sa-code",
           icon: "bi bi-file-earmark-text",
         },
         {

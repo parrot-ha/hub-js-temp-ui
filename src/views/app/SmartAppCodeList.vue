@@ -21,17 +21,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="aa in sortedCodeList" :key="aa.id">
+        <tr v-for="sa in sortedCodeList" :key="sa.id">
           <td>
             <router-link
               :to="{
                 name: 'SmartAppCodeEdit',
-                params: { id: aa.id },
+                params: { id: sa.id },
               }"
-              >{{ aa.name }}</router-link
+              >{{ sa.name }}</router-link
             >
           </td>
-          <td>{{ aa.namespace }}</td>
+          <td>{{ sa.namespace }}</td>
         </tr>
       </tbody>
     </table>
