@@ -56,7 +56,7 @@
                           :key="currentState.name"
                         >
                           {{ currentState.name }}:
-                          <strong>{{ currentState.stringValue }}</strong>
+                          <strong>{{ currentState.value }}</strong>
                         </li>
                       </ul>
                     </td>
@@ -580,7 +580,7 @@ export default {
       var matched = false;
       this.currentStates.forEach(function (item) {
         if (item.name == eventMap.name) {
-          item.stringValue = eventMap.value;
+          item.value = eventMap.value;
           matched = true;
         }
       });
@@ -588,7 +588,6 @@ export default {
         this.currentStates.push({
           name: eventMap.name,
           value: eventMap.value,
-          stringValue: eventMap.value,
         });
       }
     };
