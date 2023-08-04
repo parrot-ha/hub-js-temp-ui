@@ -163,7 +163,7 @@ export default {
       settings: {},
       savedSettings: {},
       previousSettings: {},
-      devices: {},
+      devices: [],
       breadcrumb: [],
       refreshFunction: null,
       watchers: false,
@@ -346,7 +346,7 @@ export default {
       this.watchers = true;
     },
     loadInformation: function () {
-      fetch("/api/device-id-map")
+      fetch("/api/devices?field=id&field=displayName")
         .then((response) => response.json())
         .then((data) => {
           if (typeof data !== "undefined" && data != null) {

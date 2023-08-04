@@ -80,7 +80,7 @@ export default {
           if (!data.success) {
             this.alertMessage = data.message;
           } else {
-            this.$router.push(`/sa-code/${data.saId}/edit`);
+            this.$router.push(`/sa-code/${data.id}/edit`);
           }
         })
         .catch((error) => {

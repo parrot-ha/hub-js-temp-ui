@@ -27,11 +27,11 @@
                 <tbody>
                   <tr>
                     <td>Date Created</td>
-                    <td></td>
+                    <td>{{ device.created }}</td>
                   </tr>
                   <tr>
                     <td>Last Updated</td>
-                    <td></td>
+                    <td>{{ device.updated }}</td>
                   </tr>
                   <tr>
                     <td>Data</td>

@@ -10,7 +10,7 @@
           <div class="card-text">
             <div v-if="modelValue">
               <div v-for="settingVal in modelValue" :key="settingVal">
-                {{ devices[settingVal.trim()] }}
+                {{ devices.find((device)=> device.id === settingVal).displayName }}
               </div>
             </div>
             <div v-else>
@@ -29,7 +29,7 @@
           </h5>
           <div class="card-text">
             <div v-if="modelValue">
-              {{ devices[modelValue.trim()] }}
+              {{ devices.filter((device) => device.id === modelValue.trim()) }}
             </div>
             <div v-else>
               <div>{{ body.description }}</div>
@@ -103,7 +103,7 @@ export default {
   data() {
     return {
       modal: null,
-      deviceList: {},
+      deviceList: [],
       selectedDevices: [],
       modalVisible: false,
     };
@@ -134,7 +134,7 @@ export default {
       this.$emit("input", this.value);
     },
     deviceSelectClick: function () {
-      fetch(`/api/devices?filter=${this.body.type}`)
+      fetch(`/api/devices?filter=${this.body.type}&field=id&field=displayName`)
         .then((response) => response.json())
         .then((data) => {
           if (typeof data !== "undefined" && data != null) {
