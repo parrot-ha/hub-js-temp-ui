@@ -49,7 +49,7 @@ export default {
     };
   },
   computed: {
-  sortedEvents() {
+    sortedEvents() {
       let sortedEventsTmp = [...this.events].sort((a, b) => {
         const dateA = a.date.toUpperCase();
         const dateB = b.date.toUpperCase();

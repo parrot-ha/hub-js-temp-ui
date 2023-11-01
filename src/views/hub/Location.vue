@@ -199,10 +199,10 @@ export default {
     this.debouncedUpdateMap = _debounce(this.updateMap, 500);
   },
   watch: {
-    "location.latitude": function (val) {
+    "location.latitude": function () {
       this.debouncedUpdateMap();
     },
-    "location.longitude": function (val) {
+    "location.longitude": function () {
       this.debouncedUpdateMap();
     },
   },

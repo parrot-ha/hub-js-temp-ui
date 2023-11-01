@@ -222,7 +222,10 @@
           <div class="card-body">
             <div class="card-title">
               Device Exclude
-              <span v-show="excludeDevicesRunning" class="spinner-border"></span>
+              <span
+                v-show="excludeDevicesRunning"
+                class="spinner-border"
+              ></span>
             </div>
             <div class="card-text">
               <div id="deviceExcludedDiv">

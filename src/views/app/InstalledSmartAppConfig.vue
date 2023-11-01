@@ -325,7 +325,9 @@ export default {
                   .then((response) => response.json())
                   .then((data) => {
                     if (data.success) {
-                      fetch(`/api/installed-smart-apps/${this.isaId}/cfg/settings`)
+                      fetch(
+                        `/api/installed-smart-apps/${this.isaId}/cfg/settings`
+                      )
                         .then((response) => response.json())
                         .then((data) => {
                           if (typeof data !== "undefined" && data != null) {

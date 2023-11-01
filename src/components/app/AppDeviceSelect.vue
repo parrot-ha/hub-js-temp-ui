@@ -10,7 +10,9 @@
           <div class="card-text">
             <div v-if="modelValue">
               <div v-for="settingVal in modelValue" :key="settingVal">
-                {{ devices.find((device)=> device.id === settingVal).displayName }}
+                {{
+                  devices.find((device) => device.id === settingVal).displayName
+                }}
               </div>
             </div>
             <div v-else>
