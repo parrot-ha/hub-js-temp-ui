@@ -314,7 +314,7 @@ export default {
   methods: {
     handleButtonAction: function (action, responseIndex) {
       console.log(
-        "handleButtonAction " + action + " response " + responseIndex
+        "handleButtonAction " + action + " response " + responseIndex,
       );
 
       fetch(`/api/integrations/${this.integrationId}/button-action`, {
@@ -410,7 +410,7 @@ export default {
               function () {
                 this.checkStatus();
               }.bind(this),
-              2000
+              2000,
             );
           }
         });
@@ -431,7 +431,7 @@ export default {
             function () {
               this.checkStatus();
             }.bind(this),
-            2000
+            2000,
           );
         });
     },
@@ -465,7 +465,7 @@ export default {
               function () {
                 this.checkExcludeStatus();
               }.bind(this),
-              2000
+              2000,
             );
           }
         });
@@ -486,7 +486,7 @@ export default {
             function () {
               this.checkExcludeStatus();
             }.bind(this),
-            2000
+            2000,
           );
         });
     },
@@ -552,7 +552,7 @@ export default {
                       !Array.isArray(this.settings[input.name].value)
                     ) {
                       this.settings[input.name].value = Array.from(
-                        this.settings[input.name].value
+                        this.settings[input.name].value,
                       );
                     }
                   }

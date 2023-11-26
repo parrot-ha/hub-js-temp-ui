@@ -46,7 +46,7 @@ export default {
 
     // get child apps
     fetch(
-      `/api/installed-smart-apps/${this.isaId}/child-apps?appName=${this.body.appName}&namespace=${this.body.namespace}`
+      `/api/installed-smart-apps/${this.isaId}/child-apps?appName=${this.body.appName}&namespace=${this.body.namespace}`,
     )
       .then((response) => response.json())
       .then((data) => {

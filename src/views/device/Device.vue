@@ -361,14 +361,14 @@ export default {
     filteredDevices: function () {
       if (this.dhFiltering && this.device.integrationId != null) {
         var integration = this.integrations.find(
-          (i) => i.id == this.device.integrationId
+          (i) => i.id == this.device.integrationId,
         );
         if (integration.tags != null) {
           return this.sortDeviceHandlers(this.deviceHandlers).filter(
             (dh) =>
               (dh.tags != null &&
                 integration.tags.some((t) => dh.tags.indexOf(t) >= 0)) ||
-              this.device.deviceHandlerId == dh.id
+              this.device.deviceHandlerId == dh.id,
           );
         } else {
           return this.sortDeviceHandlers(this.deviceHandlers);
@@ -460,7 +460,7 @@ export default {
           function () {
             vm.displayForceDeleteDevice = true;
           }.bind(this),
-          20000
+          20000,
         );
         fetch(`/api/devices/${this.deviceId}?poll=true`, { method: "DELETE" })
           .then((response) => response.json())
@@ -504,7 +504,7 @@ export default {
     this.deviceId = this.$route.params.id;
 
     fetch(
-      "/api/integrations?type=DEVICE&field=id&field=name&field=label&field=tags"
+      "/api/integrations?type=DEVICE&field=id&field=name&field=label&field=tags",
     )
       .then((response) => response.json())
       .then((data) => {
@@ -572,7 +572,7 @@ export default {
       .then(this.updatePreferenceLayout());
 
     let connection = new WebSocket(
-      `ws://${window.location.host}/api/devices/${this.deviceId}/events`
+      `ws://${window.location.host}/api/devices/${this.deviceId}/events`,
     );
     connection.onmessage = (event) => {
       var eventMap = JSON.parse(event.data);

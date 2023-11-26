@@ -27,7 +27,7 @@ export default {
       var tempItemList = [];
       if (Array.isArray(this.options)) {
         this.options.forEach((element) =>
-          tempItemList.push({ key: element, text: element })
+          tempItemList.push({ key: element, text: element }),
         );
       } else {
         for (const key in this.options) {

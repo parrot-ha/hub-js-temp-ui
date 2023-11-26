@@ -223,14 +223,14 @@ export default {
     filteredDevices: function () {
       if (this.dhFiltering && this.device.integrationId != null) {
         var integration = this.integrations.find(
-          (i) => i.id == this.device.integrationId
+          (i) => i.id == this.device.integrationId,
         );
         if (integration.tags != null) {
           return this.sortDeviceHandlers(this.deviceHandlers).filter(
             (dh) =>
               (dh.tags != null &&
                 integration.tags.some((t) => dh.tags.indexOf(t) >= 0)) ||
-              this.device.deviceHandlerId == dh.id
+              this.device.deviceHandlerId == dh.id,
           );
         } else {
           return this.sortDeviceHandlers(this.deviceHandlers);
@@ -263,7 +263,7 @@ export default {
     updatePreferenceLayout: function () {
       // TODO: validate the deviceHandlerId value is valid before calling
       fetch(
-        `/api/device-handlers/${this.device.deviceHandlerId}/preferences-layout`
+        `/api/device-handlers/${this.device.deviceHandlerId}/preferences-layout`,
       )
         .then((response) => {
           if (response) {
@@ -314,7 +314,7 @@ export default {
   },
   mounted: function () {
     fetch(
-      "/api/integrations?type=DEVICE&field=id&field=name&field=label&field=tags"
+      "/api/integrations?type=DEVICE&field=id&field=name&field=label&field=tags",
     )
       .then((response) => response.json())
       .then((data) => {

@@ -269,7 +269,7 @@ export default {
     updateExtension: function (extensionId) {
       var url = `/api/extensions/${extensionId}?action=update`;
       var extension = this.extensions?.filter(
-        (extension) => extension.id == extensionId
+        (extension) => extension.id == extensionId,
       );
       this.extensionStatus.extensionId =
         "Updating extension " + extension[0].name;
@@ -294,7 +294,7 @@ export default {
     downloadExtension: function (extensionId) {
       var url = `/api/extensions/${extensionId}?action=download`;
       var extension = this.extensions?.filter(
-        (extension) => extension.id == extensionId
+        (extension) => extension.id == extensionId,
       );
       this.extensionStatus.extensionId =
         "Installing extension " + extension[0].name;

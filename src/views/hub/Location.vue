@@ -155,7 +155,7 @@ export default {
       var vm = this;
       var latlng = L.latLng(
         vm.safeLatLng(vm.location.latitude),
-        vm.safeLatLng(vm.location.longitude)
+        vm.safeLatLng(vm.location.longitude),
       );
       vm.map = L.map("map").setView(latlng, 17);
       L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {

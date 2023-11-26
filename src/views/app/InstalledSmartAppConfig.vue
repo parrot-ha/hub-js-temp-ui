@@ -273,7 +273,7 @@ export default {
           ) {
             // the value changed on the hub and not on the ui.
             this.settings[ssKey] = JSON.parse(
-              JSON.stringify(this.savedSettings[ssKey])
+              JSON.stringify(this.savedSettings[ssKey]),
             );
           }
         }
@@ -306,7 +306,7 @@ export default {
                   this.settings[input.name].value = [];
                 } else if (!Array.isArray(this.settings[input.name].value)) {
                   this.settings[input.name].value = Array.from(
-                    this.settings[input.name].value
+                    this.settings[input.name].value,
                   );
                 }
               }
@@ -326,7 +326,7 @@ export default {
                   .then((data) => {
                     if (data.success) {
                       fetch(
-                        `/api/installed-smart-apps/${this.isaId}/cfg/settings`
+                        `/api/installed-smart-apps/${this.isaId}/cfg/settings`,
                       )
                         .then((response) => response.json())
                         .then((data) => {
