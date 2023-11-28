@@ -103,7 +103,6 @@
       <div class="col">
         <div id="map" style="width: 100%; height: 580px"></div>
       </div>
-      >
     </div>
   </div>
 </template>
