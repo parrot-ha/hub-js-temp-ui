@@ -91,7 +91,7 @@ export default {
       fetch(`/api/smart-apps/${this.saId}/source`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(this.smartApp),
+        body: JSON.stringify({ sourceCode: updatedCode }),
       })
         .then(handleErrors)
         .then((response) => {

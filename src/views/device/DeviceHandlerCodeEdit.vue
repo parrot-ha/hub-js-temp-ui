@@ -81,7 +81,7 @@ export default {
       fetch(`/api/device-handlers/${this.dhId}/source`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(this.deviceHandler),
+        body: JSON.stringify({ sourceCode: updatedCode }),
       })
         .then(handleErrors)
         .then((response) => {
