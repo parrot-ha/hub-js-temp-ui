@@ -5,7 +5,7 @@
       class="form-control"
       type="time"
       :value="dateTimeToTime(modelValue)"
-      @input="$emit('update:modelValue', timeToDateTime($event.target.value))"
+      @input="$emit('update:modelValue', $event.target.value)"
     />
   </div>
 </template>
@@ -24,18 +24,11 @@ export default {
       }
 
       if (dateTime.length > 5) {
-        return dateTime.substring(11, 16);
+        //TODO: check format
+        let dt = new Date(dateTime);
+        return `${dt.getHours()}:${dt.getMinutes()}`;
       } else {
         return dateTime;
-      }
-    },
-    timeToDateTime: function (time) {
-      if (typeof time === "undefined" || time == null) {
-        return time;
-      } else if (time.length == 0) {
-        return time;
-      } else {
-        return "1970-01-01T" + time + ":00.000-00:00";
       }
     },
   },
