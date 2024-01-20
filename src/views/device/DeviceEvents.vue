@@ -11,10 +11,8 @@
                   <tr>
                     <th>Date</th>
                     <th>Source</th>
-                    <th>Type</th>
                     <th>Name</th>
                     <th>Value</th>
-                    <th>User</th>
                     <th>Displayed Text</th>
                     <th>Changed</th>
                   </tr>
@@ -23,12 +21,10 @@
                   <tr v-for="event in sortedEvents" :key="event.id">
                     <td>{{ new Date(event.date).toLocaleString() }}</td>
                     <td>{{ event.source }}</td>
-                    <td>{{ event.type }}</td>
                     <td>{{ event.name }}</td>
                     <td>{{ event.value }}</td>
-                    <td>{{ event.user }}</td>
-                    <td>{{ event.displayedText }}</td>
-                    <td>{{ event.stateChange }}</td>
+                    <td>{{ event.descriptionText }}</td>
+                    <td>{{ event.isStateChange }}</td>
                   </tr>
                 </tbody>
               </table>
