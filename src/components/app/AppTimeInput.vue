@@ -26,7 +26,11 @@ export default {
       if (dateTime.length > 5) {
         //TODO: check format
         let dt = new Date(dateTime);
-        return `${dt.getHours()}:${dt.getMinutes()}`;
+        return (
+          `${dt.getHours()}`.padStart(2, "0") +
+          ":" +
+          `${dt.getMinutes()}`.padStart(2, "0")
+        );
       } else {
         return dateTime;
       }
