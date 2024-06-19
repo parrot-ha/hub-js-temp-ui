@@ -9,7 +9,7 @@
       aria-labelledby="sidebarMenuLabel"
     >
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
+        <h5 class="offcanvas-title" id="sidebarMenuLabel">Parrot Hub</h5>
         <button
           type="button"
           class="btn-close"
@@ -23,10 +23,15 @@
       >
         <ul class="nav flex-column">
           <li class="nav-item" v-for="item in items" :key="item.title">
-            <router-link :to="item.href" class="nav-link"
-              ><span data-bs-target="#sidebarMenu" data-bs-dismiss="offcanvas"
-                ><i :class="item.icon"></i> {{ item.title }}</span
-              ></router-link
+            <router-link :to="item.href" class="nav-link p-1"
+              ><button
+                type="button"
+                class="btn p-1"
+                data-bs-target="#sidebarMenu"
+                data-bs-dismiss="offcanvas"
+              >
+                <i :class="item.icon"></i> {{ item.title }}
+              </button></router-link
             >
           </li>
         </ul>
